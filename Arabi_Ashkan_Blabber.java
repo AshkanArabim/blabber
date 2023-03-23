@@ -28,10 +28,10 @@ public class Arabi_Ashkan_Blabber {
             File usersFile = new File("./users.txt");
             usersFile.createNewFile();
             // if blabs.txt doesn't exist, create it
-            File blabsFile = new File ("./blabs.txt");
+            File blabsFile = new File("./blabs.txt");
             blabsFile.createNewFile();
             // if the userFollows folder doesn't exist, create it
-            File userFollows = new File ("./userFollows");
+            File userFollows = new File("./userFollows");
             userFollows.mkdir();
         } catch (Exception e) {
             System.out.println(e);
@@ -219,7 +219,7 @@ public class Arabi_Ashkan_Blabber {
     }
 
     public static void createUserFiles(String[] users) {
-        // create a following file for each user 
+        // create a following file for each user
         for (int i = 0; i < users.length; i++) {
             try {
                 File userFile = new File("./userFollows/" + users[i] + ".txt");
@@ -269,6 +269,8 @@ public class Arabi_Ashkan_Blabber {
                 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L',
                 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '0', '1', '2', '3', '4', '5', '6',
                 '7', '8', '9' };
+
+        String valid = "äbcdefghijklmnopqrstuvwxyz12334567890"
 
         if (index == phrase.length()) {
             return true;
@@ -453,7 +455,7 @@ public class Arabi_Ashkan_Blabber {
         deleteLineFromFile(username, "./users.txt");
 
         // delete following file
-        try{
+        try {
             Files.delete(Paths.get("./userFollows/" + username + ".txt"));
         } catch (Exception e) {
             System.out.println(e);
